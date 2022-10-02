@@ -206,6 +206,10 @@ export default defineComponent({
             'has-carets': props.showIcon,
             'is-highlight': props.highlightSelectedNode && props.checked,
           }}
+          data-json-path={node.path}
+          data-json-key={node.key}
+          data-json-type={node.type}
+          data-json-content={node.content}
           onClick={handleNodeClick}
           style={props.style}
         >
