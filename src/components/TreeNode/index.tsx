@@ -210,6 +210,7 @@ export default defineComponent({
           data-json-path={node.path}
           data-json-key={node.key}
           data-json-type={node.type}
+          data-json-data-type={dataType.value}
           data-json-content={node.content}
           onClick={handleNodeClick}
           style={props.style}
