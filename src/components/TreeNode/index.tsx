@@ -176,18 +176,18 @@ export default defineComponent({
     };
 
     const handleNodeClick = () => {
-      emit('nodeClick', props.node);
+      emit('nodeClick', { ...props.node, dataType: dataType.value });
       if (selectable.value && props.selectOnClickNode) {
         emit('selectedChange', props.node);
       }
     };
 
     const handleValueClick = () => {
-      emit('valueClick', props.node);
+      emit('valueClick', { ...props.node, dataType: dataType.value });
     };
 
     const handleKeyClick = () => {
-      emit('keyClick', props.node);
+      emit('keyClick', { ...props.node, dataType: dataType.value });
     };
 
     const handleValueEdit = (e: MouseEvent) => {
@@ -255,12 +255,7 @@ export default defineComponent({
           </div>
 
           {node.key && (
-            <span class="vjs-key" data-json-id={node.id}
-              data-json-path={node.path}
-              data-json-key={node.key}
-              data-json-type={node.type}
-              data-json-data-type={dataType.value}
-              data-json-content={node.content}
+            <span class="vjs-key"
               onClick={handleKeyClick}>
               {renderKey()}
               <span>:</span>
@@ -273,12 +268,6 @@ export default defineComponent({
             ) : (
               <span
                 class={valueClass.value}
-                data-json-id={node.id}
-                data-json-path={node.path}
-                data-json-key={node.key}
-                data-json-type={node.type}
-                data-json-data-type={dataType.value}
-                data-json-content={node.content}
                 onClick={handleValueClick}
               >
                 {props.editable && state.editing ? (
