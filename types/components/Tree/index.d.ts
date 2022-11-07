@@ -108,7 +108,7 @@ declare const _default: import("vue").DefineComponent<{
     onValueChange: {
         type: PropType<(value: boolean, path: string) => void>;
     };
-}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     data: {
         type: PropType<JSONDataType>;
         default: null;
@@ -221,6 +221,8 @@ declare const _default: import("vue").DefineComponent<{
     onSelectedChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
     "onUpdate:data"?: ((...args: any[]) => any) | undefined;
+    onNodeValueClick?: ((...args: any[]) => any) | undefined;
+    onNodeKeyClick?: ((...args: any[]) => any) | undefined;
 }, {
     data: JSONDataType;
     showLength: boolean;

@@ -76,6 +76,8 @@ export default defineComponent({
     'selectedChange',
     'update:selectedValue',
     'update:data',
+    'nodeValueClick',
+    'nodeKeyClick',
   ],
 
   setup(props, { emit, slots }) {
@@ -203,6 +205,14 @@ export default defineComponent({
       emit('nodeClick', node);
     };
 
+    const handleNodeValueClick = (node: NodeDataType) => {
+      emit('nodeValueClick', node);
+    };
+
+    const handleNodeKeyClick = (node: NodeDataType) => {
+      emit('nodeKeyClick', node);
+    };
+
     const updateCollapsedPaths = (collapsed: boolean, path: string) => {
       if (collapsed) {
         state.hiddenPaths = {
@@ -274,6 +284,8 @@ export default defineComponent({
             renderNodeKey={renderNodeKey}
             renderNodeValue={renderNodeValue}
             onNodeClick={handleNodeClick}
+            onValueClick={handleNodeValueClick}
+            onKeyClick={handleNodeKeyClick}
             onBracketsClick={handleBracketsClick}
             onIconClick={handleIconClick}
             onSelectedChange={handleSelectedChange}

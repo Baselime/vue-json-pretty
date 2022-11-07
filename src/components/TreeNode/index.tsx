@@ -106,7 +106,7 @@ export default defineComponent({
     },
   },
 
-  emits: ['nodeClick', 'bracketsClick', 'iconClick', 'selectedChange', 'valueChange'],
+  emits: ['nodeClick', 'bracketsClick', 'iconClick', 'selectedChange', 'valueChange', 'valueClick', 'keyClick'],
 
   setup(props, { emit }) {
     const dataType = computed<string>(() => getDataType(props.node.content));
@@ -146,10 +146,10 @@ export default defineComponent({
 
     const defaultValue = computed(() => {
       let value = props.node?.content;
-      if(value === null) {
+      if (value === null) {
         value = 'null'
       }
-      if(value === undefined) {
+      if (value === undefined) {
         value = 'undefined'
       }
       return dataType.value === 'string' ? `"${value}"` : value + ''
@@ -180,6 +180,14 @@ export default defineComponent({
       if (selectable.value && props.selectOnClickNode) {
         emit('selectedChange', props.node);
       }
+    };
+
+    const handleValueClick = () => {
+      emit('valueClick', props.node);
+    };
+
+    const handleKeyClick = () => {
+      emit('keyClick', props.node);
     };
 
     const handleValueEdit = (e: MouseEvent) => {
@@ -247,7 +255,13 @@ export default defineComponent({
           </div>
 
           {node.key && (
-            <span class="vjs-key">
+            <span class="vjs-key" data-json-id={node.id}
+              data-json-path={node.path}
+              data-json-key={node.key}
+              data-json-type={node.type}
+              data-json-data-type={dataType.value}
+              data-json-content={node.content}
+              onClick={handleKeyClick}>
               {renderKey()}
               <span>:</span>
             </span>
@@ -259,16 +273,13 @@ export default defineComponent({
             ) : (
               <span
                 class={valueClass.value}
-                onClick={
-                  props.editable && (!props.editableTrigger || props.editableTrigger === 'click')
-                    ? handleValueEdit
-                    : undefined
-                }
-                onDblclick={
-                  props.editable && props.editableTrigger === 'dblclick'
-                    ? handleValueEdit
-                    : undefined
-                }
+                data-json-id={node.id}
+                data-json-path={node.path}
+                data-json-key={node.key}
+                data-json-type={node.type}
+                data-json-data-type={dataType.value}
+                data-json-content={node.content}
+                onClick={handleValueClick}
               >
                 {props.editable && state.editing ? (
                   <input

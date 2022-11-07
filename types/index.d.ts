@@ -137,6 +137,8 @@ declare const _default: {
             onSelectedChange?: ((...args: any[]) => any) | undefined;
             "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
             "onUpdate:data"?: ((...args: any[]) => any) | undefined;
+            onNodeValueClick?: ((...args: any[]) => any) | undefined;
+            onNodeKeyClick?: ((...args: any[]) => any) | undefined;
         } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "data" | "showLength" | "showDoubleQuotes" | "showSelectController" | "showLine" | "showLineNumber" | "selectOnClickNode" | "nodeSelectable" | "highlightSelectedNode" | "showIcon" | "editable" | "editableTrigger" | "deep" | "pathCollapsible" | "rootPath" | "virtual" | "height" | "itemHeight" | "selectedValue" | "collapsedOnClickBrackets">;
         $attrs: {
             [x: string]: unknown;
@@ -149,7 +151,7 @@ declare const _default: {
         }>;
         $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
         $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-        $emit: (event: "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data", ...args: any[]) => void;
+        $emit: (event: "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", ...args: any[]) => void;
         $el: any;
         $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
             data: {
@@ -264,7 +266,9 @@ declare const _default: {
             onSelectedChange?: ((...args: any[]) => any) | undefined;
             "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
             "onUpdate:data"?: ((...args: any[]) => any) | undefined;
-        }, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data")[], string, {
+            onNodeValueClick?: ((...args: any[]) => any) | undefined;
+            onNodeKeyClick?: ((...args: any[]) => any) | undefined;
+        }, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], string, {
             data: import("./utils").JSONDataType;
             showLength: boolean;
             showDoubleQuotes: boolean;
@@ -418,6 +422,8 @@ declare const _default: {
         onSelectedChange?: ((...args: any[]) => any) | undefined;
         "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
         "onUpdate:data"?: ((...args: any[]) => any) | undefined;
+        onNodeValueClick?: ((...args: any[]) => any) | undefined;
+        onNodeKeyClick?: ((...args: any[]) => any) | undefined;
     } & import("vue").ShallowUnwrapRef<() => JSX.Element> & {} & import("vue").ComponentCustomProperties;
     __isFragment?: undefined;
     __isTeleport?: undefined;
@@ -535,7 +541,9 @@ declare const _default: {
     onSelectedChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
     "onUpdate:data"?: ((...args: any[]) => any) | undefined;
-}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data", {
+    onNodeValueClick?: ((...args: any[]) => any) | undefined;
+    onNodeKeyClick?: ((...args: any[]) => any) | undefined;
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", {
     data: import("./utils").JSONDataType;
     showLength: boolean;
     showDoubleQuotes: boolean;

@@ -147,7 +147,7 @@ declare const _default: import("vue").DefineComponent<{
     onValueChange: {
         type: PropType<(value: boolean, path: string) => void>;
     };
-}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "valueChange")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "valueChange", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "valueChange" | "valueClick" | "keyClick")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "valueChange" | "valueClick" | "keyClick", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     node: {
         type: PropType<NodeDataType>;
         required: true;
@@ -229,6 +229,8 @@ declare const _default: import("vue").DefineComponent<{
     onIconClick?: ((...args: any[]) => any) | undefined;
     onSelectedChange?: ((...args: any[]) => any) | undefined;
     onValueChange?: ((...args: any[]) => any) | undefined;
+    onValueClick?: ((...args: any[]) => any) | undefined;
+    onKeyClick?: ((...args: any[]) => any) | undefined;
 }, {
     checked: boolean;
     collapsed: boolean;
