@@ -175,19 +175,19 @@ export default defineComponent({
       emit('selectedChange', props.node);
     };
 
-    const handleNodeClick = () => {
-      emit('nodeClick', { ...props.node, dataType: dataType.value });
+    const handleNodeClick = (event: MouseEvent) => {
+      emit('nodeClick', { data: { ...props.node, dataType: dataType.value, }, event });
       if (selectable.value && props.selectOnClickNode) {
         emit('selectedChange', props.node);
       }
     };
 
-    const handleValueClick = () => {
-      emit('valueClick', { ...props.node, dataType: dataType.value });
+    const handleValueClick = (event: MouseEvent) => {
+      emit('valueClick', { data: { ...props.node, dataType: dataType.value, }, event });
     };
 
-    const handleKeyClick = () => {
-      emit('keyClick', { ...props.node, dataType: dataType.value });
+    const handleKeyClick = (event: MouseEvent) => {
+      emit('keyClick', { data: { ...props.node, dataType: dataType.value, }, event });
     };
 
     const handleValueEdit = (e: MouseEvent) => {

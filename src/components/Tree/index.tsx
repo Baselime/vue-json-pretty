@@ -205,12 +205,12 @@ export default defineComponent({
       emit('nodeClick', node);
     };
 
-    const handleNodeValueClick = (node: NodeDataType) => {
-      emit('nodeValueClick', node);
+    const handleNodeValueClick = (...args: any) => {
+      emit('nodeValueClick', args);
     };
 
-    const handleNodeKeyClick = (node: NodeDataType) => {
-      emit('nodeKeyClick', node);
+    const handleNodeKeyClick = (...args: any) => {
+      emit('nodeKeyClick', args);
     };
 
     const updateCollapsedPaths = (collapsed: boolean, path: string) => {
