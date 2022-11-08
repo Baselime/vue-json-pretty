@@ -119,7 +119,28 @@ declare const _default: {
                 default: string;
             };
             onNodeClick: {
-                type: import("vue").PropType<(node: import("./components/TreeNode").NodeDataType) => void>;
+                type: import("vue").PropType<(data: {
+                    data: import("./components/TreeNode").NodeDataType & {
+                        dataType: string;
+                    };
+                    event: MouseEvent;
+                }) => void>;
+            };
+            onValueClick: {
+                type: import("vue").PropType<(data: {
+                    data: import("./components/TreeNode").NodeDataType & {
+                        dataType: string;
+                    };
+                    event: MouseEvent;
+                }) => void>;
+            };
+            onKeyClick: {
+                type: import("vue").PropType<(data: {
+                    data: import("./components/TreeNode").NodeDataType & {
+                        dataType: string;
+                    };
+                    event: MouseEvent;
+                }) => void>;
             };
             onBracketsClick: {
                 type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
@@ -248,7 +269,28 @@ declare const _default: {
                 default: string;
             };
             onNodeClick: {
-                type: import("vue").PropType<(node: import("./components/TreeNode").NodeDataType) => void>;
+                type: import("vue").PropType<(data: {
+                    data: import("./components/TreeNode").NodeDataType & {
+                        dataType: string;
+                    };
+                    event: MouseEvent;
+                }) => void>;
+            };
+            onValueClick: {
+                type: import("vue").PropType<(data: {
+                    data: import("./components/TreeNode").NodeDataType & {
+                        dataType: string;
+                    };
+                    event: MouseEvent;
+                }) => void>;
+            };
+            onKeyClick: {
+                type: import("vue").PropType<(data: {
+                    data: import("./components/TreeNode").NodeDataType & {
+                        dataType: string;
+                    };
+                    event: MouseEvent;
+                }) => void>;
             };
             onBracketsClick: {
                 type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
@@ -404,7 +446,28 @@ declare const _default: {
             default: string;
         };
         onNodeClick: {
-            type: import("vue").PropType<(node: import("./components/TreeNode").NodeDataType) => void>;
+            type: import("vue").PropType<(data: {
+                data: import("./components/TreeNode").NodeDataType & {
+                    dataType: string;
+                };
+                event: MouseEvent;
+            }) => void>;
+        };
+        onValueClick: {
+            type: import("vue").PropType<(data: {
+                data: import("./components/TreeNode").NodeDataType & {
+                    dataType: string;
+                };
+                event: MouseEvent;
+            }) => void>;
+        };
+        onKeyClick: {
+            type: import("vue").PropType<(data: {
+                data: import("./components/TreeNode").NodeDataType & {
+                    dataType: string;
+                };
+                event: MouseEvent;
+            }) => void>;
         };
         onBracketsClick: {
             type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
@@ -523,7 +586,28 @@ declare const _default: {
         default: string;
     };
     onNodeClick: {
-        type: import("vue").PropType<(node: import("./components/TreeNode").NodeDataType) => void>;
+        type: import("vue").PropType<(data: {
+            data: import("./components/TreeNode").NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
+    };
+    onValueClick: {
+        type: import("vue").PropType<(data: {
+            data: import("./components/TreeNode").NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
+    };
+    onKeyClick: {
+        type: import("vue").PropType<(data: {
+            data: import("./components/TreeNode").NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
     };
     onBracketsClick: {
         type: import("vue").PropType<(collapsed: boolean, path: string) => void>;

@@ -97,7 +97,28 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     onNodeClick: {
-        type: PropType<(node: NodeDataType) => void>;
+        type: PropType<(data: {
+            data: NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
+    };
+    onValueClick: {
+        type: PropType<(data: {
+            data: NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
+    };
+    onKeyClick: {
+        type: PropType<(data: {
+            data: NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
     };
     onBracketsClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
@@ -203,7 +224,28 @@ declare const _default: import("vue").DefineComponent<{
         default: string;
     };
     onNodeClick: {
-        type: PropType<(node: NodeDataType) => void>;
+        type: PropType<(data: {
+            data: NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
+    };
+    onValueClick: {
+        type: PropType<(data: {
+            data: NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
+    };
+    onKeyClick: {
+        type: PropType<(data: {
+            data: NodeDataType & {
+                dataType: string;
+            };
+            event: MouseEvent;
+        }) => void>;
     };
     onBracketsClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;

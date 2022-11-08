@@ -162,8 +162,8 @@ export default defineComponent({
           scrollCount < 0
             ? 0
             : scrollCount + visibleCount > flatDataValue.length
-            ? flatDataValue.length - visibleCount
-            : scrollCount;
+              ? flatDataValue.length - visibleCount
+              : scrollCount;
         if (start < 0) {
           start = 0;
         }
@@ -201,16 +201,16 @@ export default defineComponent({
       }
     };
 
-    const handleNodeClick = (node: NodeDataType) => {
-      emit('nodeClick', node);
+    const handleNodeClick = (data: { event: MouseEvent; data: NodeDataType & { dataType: string } }) => {
+      emit('nodeClick', data);
     };
 
-    const handleNodeValueClick = (...args: any) => {
-      emit('nodeValueClick', args);
+    const handleNodeValueClick = (data: { event: MouseEvent; data: NodeDataType & { dataType: string } }) => {
+      emit('nodeValueClick', data);
     };
 
-    const handleNodeKeyClick = (...args: any) => {
-      emit('nodeKeyClick', args);
+    const handleNodeKeyClick = (data: { event: MouseEvent; data: NodeDataType & { dataType: string } }) => {
+      emit('nodeKeyClick', data);
     };
 
     const updateCollapsedPaths = (collapsed: boolean, path: string) => {
@@ -309,9 +309,9 @@ export default defineComponent({
           style={
             props.showLineNumber
               ? {
-                  paddingLeft: `${Number(flatData.value.length.toString().length) * 12}px`,
-                  ...props.style,
-                }
+                paddingLeft: `${Number(flatData.value.length.toString().length) * 12}px`,
+                ...props.style,
+              }
               : props.style
           }
         >

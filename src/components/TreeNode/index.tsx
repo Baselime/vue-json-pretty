@@ -73,7 +73,13 @@ export const treeNodePropsPass = {
     default: 'click',
   },
   onNodeClick: {
-    type: Function as PropType<(node: NodeDataType) => void>,
+    type: Function as PropType<(data: {data: NodeDataType & {dataType: string}; event: MouseEvent}) => void>,
+  },
+  onValueClick: {
+    type: Function as PropType<(data: {data: NodeDataType & {dataType: string}; event: MouseEvent}) => void>,
+  },
+  onKeyClick: {
+    type: Function as PropType<(data: {data: NodeDataType & {dataType: string}; event: MouseEvent}) => void>,
   },
   onBracketsClick: {
     type: Function as PropType<(collapsed: boolean, path: string) => void>,
