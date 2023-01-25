@@ -145,6 +145,9 @@ declare const _default: {
             onBracketsClick: {
                 type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
             };
+            handleMenuClick: {
+                type: import("vue").PropType<(menu: boolean, path: string) => void>;
+            };
             onIconClick: {
                 type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
             };
@@ -154,6 +157,7 @@ declare const _default: {
         }>> & {
             onNodeClick?: ((...args: any[]) => any) | undefined;
             onBracketsClick?: ((...args: any[]) => any) | undefined;
+            onMenuClick?: ((...args: any[]) => any) | undefined;
             onIconClick?: ((...args: any[]) => any) | undefined;
             onSelectedChange?: ((...args: any[]) => any) | undefined;
             "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
@@ -172,7 +176,7 @@ declare const _default: {
         }>;
         $root: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
         $parent: import("vue").ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, import("vue").ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}>> | null;
-        $emit: (event: "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", ...args: any[]) => void;
+        $emit: (event: "nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", ...args: any[]) => void;
         $el: any;
         $options: import("vue").ComponentOptionsBase<Readonly<import("vue").ExtractPropTypes<{
             data: {
@@ -295,6 +299,9 @@ declare const _default: {
             onBracketsClick: {
                 type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
             };
+            handleMenuClick: {
+                type: import("vue").PropType<(menu: boolean, path: string) => void>;
+            };
             onIconClick: {
                 type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
             };
@@ -304,13 +311,14 @@ declare const _default: {
         }>> & {
             onNodeClick?: ((...args: any[]) => any) | undefined;
             onBracketsClick?: ((...args: any[]) => any) | undefined;
+            onMenuClick?: ((...args: any[]) => any) | undefined;
             onIconClick?: ((...args: any[]) => any) | undefined;
             onSelectedChange?: ((...args: any[]) => any) | undefined;
             "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
             "onUpdate:data"?: ((...args: any[]) => any) | undefined;
             onNodeValueClick?: ((...args: any[]) => any) | undefined;
             onNodeKeyClick?: ((...args: any[]) => any) | undefined;
-        }, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], string, {
+        }, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], string, {
             data: import("./utils").JSONDataType;
             showLength: boolean;
             showDoubleQuotes: boolean;
@@ -472,6 +480,9 @@ declare const _default: {
         onBracketsClick: {
             type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
         };
+        handleMenuClick: {
+            type: import("vue").PropType<(menu: boolean, path: string) => void>;
+        };
         onIconClick: {
             type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
         };
@@ -481,6 +492,7 @@ declare const _default: {
     }>> & {
         onNodeClick?: ((...args: any[]) => any) | undefined;
         onBracketsClick?: ((...args: any[]) => any) | undefined;
+        onMenuClick?: ((...args: any[]) => any) | undefined;
         onIconClick?: ((...args: any[]) => any) | undefined;
         onSelectedChange?: ((...args: any[]) => any) | undefined;
         "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
@@ -612,6 +624,9 @@ declare const _default: {
     onBracketsClick: {
         type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
     };
+    handleMenuClick: {
+        type: import("vue").PropType<(menu: boolean, path: string) => void>;
+    };
     onIconClick: {
         type: import("vue").PropType<(collapsed: boolean, path: string) => void>;
     };
@@ -621,13 +636,14 @@ declare const _default: {
 }>> & {
     onNodeClick?: ((...args: any[]) => any) | undefined;
     onBracketsClick?: ((...args: any[]) => any) | undefined;
+    onMenuClick?: ((...args: any[]) => any) | undefined;
     onIconClick?: ((...args: any[]) => any) | undefined;
     onSelectedChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;
     "onUpdate:data"?: ((...args: any[]) => any) | undefined;
     onNodeValueClick?: ((...args: any[]) => any) | undefined;
     onNodeKeyClick?: ((...args: any[]) => any) | undefined;
-}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", {
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], "nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", {
     data: import("./utils").JSONDataType;
     showLength: boolean;
     showDoubleQuotes: boolean;

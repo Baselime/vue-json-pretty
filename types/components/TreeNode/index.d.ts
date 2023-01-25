@@ -85,6 +85,9 @@ export declare const treeNodePropsPass: {
     onBracketsClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
     };
+    handleMenuClick: {
+        type: PropType<(menu: boolean, path: string) => void>;
+    };
     onIconClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
     };
@@ -99,6 +102,7 @@ declare const _default: import("vue").DefineComponent<{
     };
     collapsed: BooleanConstructor;
     checked: BooleanConstructor;
+    menu: BooleanConstructor;
     style: PropType<CSSProperties>;
     onSelectedChange: {
         type: PropType<(node: NodeDataType) => void>;
@@ -182,6 +186,9 @@ declare const _default: import("vue").DefineComponent<{
     };
     onBracketsClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
+    };
+    handleMenuClick: {
+        type: PropType<(menu: boolean, path: string) => void>;
     };
     onIconClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
@@ -189,13 +196,14 @@ declare const _default: import("vue").DefineComponent<{
     onValueChange: {
         type: PropType<(value: boolean, path: string) => void>;
     };
-}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "valueChange" | "valueClick" | "keyClick")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "valueChange" | "valueClick" | "keyClick", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "valueChange" | "valueClick" | "keyClick")[], "nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "valueChange" | "valueClick" | "keyClick", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     node: {
         type: PropType<NodeDataType>;
         required: true;
     };
     collapsed: BooleanConstructor;
     checked: BooleanConstructor;
+    menu: BooleanConstructor;
     style: PropType<CSSProperties>;
     onSelectedChange: {
         type: PropType<(node: NodeDataType) => void>;
@@ -279,6 +287,9 @@ declare const _default: import("vue").DefineComponent<{
     };
     onBracketsClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
+    };
+    handleMenuClick: {
+        type: PropType<(menu: boolean, path: string) => void>;
     };
     onIconClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
@@ -289,12 +300,14 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     onNodeClick?: ((...args: any[]) => any) | undefined;
     onBracketsClick?: ((...args: any[]) => any) | undefined;
+    onMenuClick?: ((...args: any[]) => any) | undefined;
     onIconClick?: ((...args: any[]) => any) | undefined;
     onSelectedChange?: ((...args: any[]) => any) | undefined;
     onValueChange?: ((...args: any[]) => any) | undefined;
     onValueClick?: ((...args: any[]) => any) | undefined;
     onKeyClick?: ((...args: any[]) => any) | undefined;
 }, {
+    menu: boolean;
     checked: boolean;
     collapsed: boolean;
     showLength: boolean;

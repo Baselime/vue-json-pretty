@@ -84,6 +84,9 @@ export const treeNodePropsPass = {
   onBracketsClick: {
     type: Function as PropType<(collapsed: boolean, path: string) => void>,
   },
+  handleMenuClick: {
+    type: Function as PropType<(menu: boolean, path: string) => void>,
+  },
   onIconClick: {
     type: Function as PropType<(collapsed: boolean, path: string) => void>,
   },
@@ -106,13 +109,14 @@ export default defineComponent({
     collapsed: Boolean,
     // Whether the current node is checked(When using the selection function).
     checked: Boolean,
+    menu: Boolean,
     style: Object as PropType<CSSProperties>,
     onSelectedChange: {
       type: Function as PropType<(node: NodeDataType) => void>,
     },
   },
 
-  emits: ['nodeClick', 'bracketsClick', 'iconClick', 'selectedChange', 'valueChange', 'valueClick', 'keyClick'],
+  emits: ['nodeClick', 'bracketsClick', 'menuClick', 'iconClick', 'selectedChange', 'valueChange', 'valueClick', 'keyClick'],
 
   setup(props, { emit }) {
     const dataType = computed<string>(() => getDataType(props.node.content));
@@ -171,6 +175,10 @@ export default defineComponent({
 
     const handleBracketsClick = () => {
       emit('bracketsClick', !props.collapsed, props.node.path);
+    };
+
+    const handleMenuClick = () => {
+      emit('menuClick', { data: { ...props.node, dataType: dataType.value, }, event });
     };
 
     const handleIconClick = () => {
@@ -296,6 +304,9 @@ export default defineComponent({
             )}
 
             {node.showComma && <span>{','}</span>}
+            {props.menu && !props.collapsed && (node.type === 'content') && (
+              <span class="vjs-menu" onClick={handleMenuClick}>...</span>
+            )}
 
             {props.showLength && props.collapsed && (
               <span class="vjs-comment"> // {node.length} items </span>

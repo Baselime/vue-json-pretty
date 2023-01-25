@@ -123,13 +123,16 @@ declare const _default: import("vue").DefineComponent<{
     onBracketsClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
     };
+    handleMenuClick: {
+        type: PropType<(menu: boolean, path: string) => void>;
+    };
     onIconClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
     };
     onValueChange: {
         type: PropType<(value: boolean, path: string) => void>;
     };
-}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], "nodeClick" | "bracketsClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], "nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     data: {
         type: PropType<JSONDataType>;
         default: null;
@@ -250,6 +253,9 @@ declare const _default: import("vue").DefineComponent<{
     onBracketsClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
     };
+    handleMenuClick: {
+        type: PropType<(menu: boolean, path: string) => void>;
+    };
     onIconClick: {
         type: PropType<(collapsed: boolean, path: string) => void>;
     };
@@ -259,6 +265,7 @@ declare const _default: import("vue").DefineComponent<{
 }>> & {
     onNodeClick?: ((...args: any[]) => any) | undefined;
     onBracketsClick?: ((...args: any[]) => any) | undefined;
+    onMenuClick?: ((...args: any[]) => any) | undefined;
     onIconClick?: ((...args: any[]) => any) | undefined;
     onSelectedChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:selectedValue"?: ((...args: any[]) => any) | undefined;

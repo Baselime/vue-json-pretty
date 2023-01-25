@@ -78,6 +78,7 @@ export default defineComponent({
     'update:data',
     'nodeValueClick',
     'nodeKeyClick',
+    'menuClick',
   ],
 
   setup(props, { emit, slots }) {
@@ -233,6 +234,10 @@ export default defineComponent({
       emit('bracketsClick', collapsed);
     };
 
+    const handleMenuClick = (data: { event: MouseEvent; data: NodeDataType & { dataType: string } }) => {
+      emit('menuClick', data);
+    };
+
     const handleIconClick = (collapsed: boolean, path: string) => {
       updateCollapsedPaths(collapsed, path);
       emit('iconClick', collapsed);
@@ -268,6 +273,7 @@ export default defineComponent({
             key={item.id}
             node={item}
             collapsed={!!state.hiddenPaths[item.path]}
+            menu={true}
             showDoubleQuotes={props.showDoubleQuotes}
             showLength={props.showLength}
             checked={selectedPaths.value.includes(item.path)}
@@ -287,6 +293,7 @@ export default defineComponent({
             onValueClick={handleNodeValueClick}
             onKeyClick={handleNodeKeyClick}
             onBracketsClick={handleBracketsClick}
+            onMenuClick={handleMenuClick}
             onIconClick={handleIconClick}
             onSelectedChange={handleSelectedChange}
             onValueChange={handleValueChange}
