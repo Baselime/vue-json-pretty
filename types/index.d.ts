@@ -6,6 +6,7 @@ declare const _default: {
         $props: Partial<{
             data: import("./utils").JSONDataType;
             showLength: boolean;
+            showMenu: boolean;
             showDoubleQuotes: boolean;
             showSelectController: boolean;
             showLine: boolean;
@@ -66,6 +67,10 @@ declare const _default: {
                 type: import("vue").PropType<(newVal: string | string[], oldVal: string | string[]) => void>;
             };
             showLength: {
+                type: BooleanConstructor;
+                default: boolean;
+            };
+            showMenu: {
                 type: BooleanConstructor;
                 default: boolean;
             };
@@ -164,7 +169,7 @@ declare const _default: {
             "onUpdate:data"?: ((...args: any[]) => any) | undefined;
             onNodeValueClick?: ((...args: any[]) => any) | undefined;
             onNodeKeyClick?: ((...args: any[]) => any) | undefined;
-        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "data" | "showLength" | "showDoubleQuotes" | "showSelectController" | "showLine" | "showLineNumber" | "selectOnClickNode" | "nodeSelectable" | "highlightSelectedNode" | "showIcon" | "editable" | "editableTrigger" | "deep" | "pathCollapsible" | "rootPath" | "virtual" | "height" | "itemHeight" | "selectedValue" | "collapsedOnClickBrackets">;
+        } & import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, "data" | "showLength" | "showMenu" | "showDoubleQuotes" | "showSelectController" | "showLine" | "showLineNumber" | "selectOnClickNode" | "nodeSelectable" | "highlightSelectedNode" | "showIcon" | "editable" | "editableTrigger" | "deep" | "pathCollapsible" | "rootPath" | "virtual" | "height" | "itemHeight" | "selectedValue" | "collapsedOnClickBrackets">;
         $attrs: {
             [x: string]: unknown;
         };
@@ -220,6 +225,10 @@ declare const _default: {
                 type: import("vue").PropType<(newVal: string | string[], oldVal: string | string[]) => void>;
             };
             showLength: {
+                type: BooleanConstructor;
+                default: boolean;
+            };
+            showMenu: {
                 type: BooleanConstructor;
                 default: boolean;
             };
@@ -321,6 +330,7 @@ declare const _default: {
         }, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], string, {
             data: import("./utils").JSONDataType;
             showLength: boolean;
+            showMenu: boolean;
             showDoubleQuotes: boolean;
             showSelectController: boolean;
             showLine: boolean;
@@ -401,6 +411,10 @@ declare const _default: {
             type: import("vue").PropType<(newVal: string | string[], oldVal: string | string[]) => void>;
         };
         showLength: {
+            type: BooleanConstructor;
+            default: boolean;
+        };
+        showMenu: {
             type: BooleanConstructor;
             default: boolean;
         };
@@ -548,6 +562,10 @@ declare const _default: {
         type: BooleanConstructor;
         default: boolean;
     };
+    showMenu: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
     showDoubleQuotes: {
         type: BooleanConstructor;
         default: boolean;
@@ -646,6 +664,7 @@ declare const _default: {
 }, () => JSX.Element, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick")[], "nodeClick" | "bracketsClick" | "menuClick" | "iconClick" | "selectedChange" | "update:selectedValue" | "update:data" | "nodeValueClick" | "nodeKeyClick", {
     data: import("./utils").JSONDataType;
     showLength: boolean;
+    showMenu: boolean;
     showDoubleQuotes: boolean;
     showSelectController: boolean;
     showLine: boolean;

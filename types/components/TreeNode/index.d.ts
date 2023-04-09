@@ -9,6 +9,10 @@ export declare const treeNodePropsPass: {
         type: BooleanConstructor;
         default: boolean;
     };
+    showMenu: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
     showDoubleQuotes: {
         type: BooleanConstructor;
         default: boolean;
@@ -102,12 +106,15 @@ declare const _default: import("vue").DefineComponent<{
     };
     collapsed: BooleanConstructor;
     checked: BooleanConstructor;
-    menu: BooleanConstructor;
     style: PropType<CSSProperties>;
     onSelectedChange: {
         type: PropType<(node: NodeDataType) => void>;
     };
     showLength: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    showMenu: {
         type: BooleanConstructor;
         default: boolean;
     };
@@ -203,12 +210,15 @@ declare const _default: import("vue").DefineComponent<{
     };
     collapsed: BooleanConstructor;
     checked: BooleanConstructor;
-    menu: BooleanConstructor;
     style: PropType<CSSProperties>;
     onSelectedChange: {
         type: PropType<(node: NodeDataType) => void>;
     };
     showLength: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    showMenu: {
         type: BooleanConstructor;
         default: boolean;
     };
@@ -307,10 +317,10 @@ declare const _default: import("vue").DefineComponent<{
     onValueClick?: ((...args: any[]) => any) | undefined;
     onKeyClick?: ((...args: any[]) => any) | undefined;
 }, {
-    menu: boolean;
     checked: boolean;
     collapsed: boolean;
     showLength: boolean;
+    showMenu: boolean;
     showDoubleQuotes: boolean;
     showSelectController: boolean;
     showLine: boolean;

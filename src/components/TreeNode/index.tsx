@@ -16,6 +16,10 @@ export const treeNodePropsPass = {
     type: Boolean,
     default: false,
   },
+  showMenu: {
+    type: Boolean,
+    default: true,
+  },
   // Whether the key name uses double quotes.
   showDoubleQuotes: {
     type: Boolean,
@@ -109,7 +113,6 @@ export default defineComponent({
     collapsed: Boolean,
     // Whether the current node is checked(When using the selection function).
     checked: Boolean,
-    menu: Boolean,
     style: Object as PropType<CSSProperties>,
     onSelectedChange: {
       type: Function as PropType<(node: NodeDataType) => void>,
@@ -304,7 +307,7 @@ export default defineComponent({
             )}
 
             {node.showComma && <span>{','}</span>}
-            {props.menu && !props.collapsed && (node.type === 'content') && (
+            {props.showMenu && !props.collapsed && (node.type === 'content') && (
               <span class="vjs-menu" onClick={handleMenuClick}>...</span>
             )}
 

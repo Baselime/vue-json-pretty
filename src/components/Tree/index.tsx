@@ -129,7 +129,6 @@ export default defineComponent({
           data.push(mergeItem);
         } else if (isHidden && !startHiddenItem) {
           startHiddenItem = item;
-          continue;
         } else {
           if (startHiddenItem) continue;
           else data.push(item);
@@ -267,13 +266,12 @@ export default defineComponent({
       const renderNodeValue = props.renderNodeValue ?? slots.renderNodeValue;
 
       const nodeContent =
-        state.visibleData &&
-        state.visibleData.map(item => (
+        state.visibleData?.map(item => (
           <TreeNode
             key={item.id}
             node={item}
             collapsed={!!state.hiddenPaths[item.path]}
-            menu={true}
+            showMenu={props.showMenu}
             showDoubleQuotes={props.showDoubleQuotes}
             showLength={props.showLength}
             checked={selectedPaths.value.includes(item.path)}

@@ -47,6 +47,10 @@ declare const _default: import("vue").DefineComponent<{
         type: BooleanConstructor;
         default: boolean;
     };
+    showMenu: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
     showDoubleQuotes: {
         type: BooleanConstructor;
         default: boolean;
@@ -177,6 +181,10 @@ declare const _default: import("vue").DefineComponent<{
         type: BooleanConstructor;
         default: boolean;
     };
+    showMenu: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
     showDoubleQuotes: {
         type: BooleanConstructor;
         default: boolean;
@@ -275,6 +283,7 @@ declare const _default: import("vue").DefineComponent<{
 }, {
     data: JSONDataType;
     showLength: boolean;
+    showMenu: boolean;
     showDoubleQuotes: boolean;
     showSelectController: boolean;
     showLine: boolean;
